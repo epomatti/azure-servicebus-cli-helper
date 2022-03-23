@@ -8,5 +8,5 @@ def get_config():
 def get_connection_string():
     parser = get_config()
     connection_string = parser.get('AZURE', 'SERVICE_BUS_CONNECTION_STRING')
-    # TODO validate before return
+    # TODO: validate before return
     return connection_string

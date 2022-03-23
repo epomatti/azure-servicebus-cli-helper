@@ -1,36 +1,31 @@
-# Azure Service Bus CLI Helper
+# Azure Service Bus Purge
 
-A cross-platform CLI helper to run commands on Azure Service Bus.
+### Running it
 
-## Why
+Install the dependencies:
 
-Microsoft does not provide an official management client and [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer) is exclusive for Windows.
-
-## Usage
-
-**Caution:** Confirm messages are not yet implemented.
-
-Count messages in a queue:
-
-```s
-python3 src/main.py count queue_name
-```
-
-Purge messages in a queue:
-
-```s
-python3 src/main.py purge queue_name
-```
-
-## Running it
-
-Install dependencies:
-
-```s
-apt-get install python3-venv
+```sh
 python3 -m venv env
 . env/bin/activate
 pip install -r requirements.txt
 ```
 
-Create `config.ini` file with the connection string information.
+Setup the `config.ini` file:
+
+```sh
+# add the service bus connection string to this file
+cp config_example.ini config.ini
+```
+
+Purge:
+
+```sh
+# purge
+python3 src/main.py purge 'queue_name'
+```
+
+### Purple Explorer
+
+Checkout this project for an open source cross-platform experience:
+
+https://github.com/telstrapurple/PurpleExplorer
